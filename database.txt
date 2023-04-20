@@ -5,7 +5,7 @@ webblog
      -title
      -user_id
      -article
-     -picture
+     -image
      -created_at
      -updated_at
 
@@ -19,6 +19,7 @@ webblog
    comments
      -id
      -user_id
+     -post_id
      -comment
 
    categories
@@ -29,4 +30,3 @@ webblog
      -id
      -post_id
      -category_id
-
