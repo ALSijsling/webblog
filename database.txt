@@ -1,0 +1,32 @@
+webblog
+
+   posts
+     -id
+     -title
+     -user_id
+     -article
+     -picture
+     -created_at
+     -updated_at
+
+   users
+     -id
+     -name
+     -password
+     -email
+     -is_premium
+
+   comments
+     -id
+     -user_id
+     -comment
+
+   categories
+     -id
+     -name
+
+   posts_categories
+     -id
+     -post_id
+     -category_id
+
