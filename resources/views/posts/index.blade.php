@@ -14,7 +14,13 @@
         @endsection
 
         @section('content')
-            <h1>Hello World</h1>
+            @foreach ($posts as $post)
+                <article class='post'>
+                    <h1>{{ $post->title }}</h1>
+                    <h5>{{ $post->created_at->toDateString() }}</h5>
+                    <div class='article'>{!! $post->article !!}</div>
+                </article>
+            @endforeach
         @endsection
     </body>
 

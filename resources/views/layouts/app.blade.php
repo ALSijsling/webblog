@@ -15,7 +15,7 @@
     <body>
         @section('navbar')
             <div id="navBar">
-                <a href="{{route('index')}}">Home</a>
+                <a href="{{route('posts.index')}}">Home</a>
                 <div id="dropdown">
                     <button id="dropbtn">Categories<i class="fa fa-caret-down"></i></button>
                     <div id="dropdown-content">

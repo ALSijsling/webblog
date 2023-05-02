@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->longText('article');
             $table->string('image');
-            $table->timestamps();
+            $table->date('created_at');
         });
     }
 
