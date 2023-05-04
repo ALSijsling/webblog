@@ -18,17 +18,27 @@ class PostController extends Controller
 
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     public function store(StorePostRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $post = new Post;
+        $post->user_id = $validated['user_id'];
+        $post->title = $validated['title'];
+        $post->article = $validated['article'];
+        $post->save();
+
+        return redirect('/posts');
     }
 
     public function show(Post $post)
     {
-        //
+        return view('posts.show', [
+            'post' => $post
+        ]);
     }
 
     public function edit(Post $post)

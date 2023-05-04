@@ -23,7 +23,7 @@
     background-color: #C39BD3;
 }
 
-#navBar #searchBar {
+#navBar #searchBar, #navBar #logIn {
     float: right;
     margin-right: 10px;
 }

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->foreignId('user_id');
             $table->longText('article');
-            $table->string('image');
-            $table->date('created_at');
+            $table->string('image')->default("");
+            $table->timestamps();
         });
     }
 
