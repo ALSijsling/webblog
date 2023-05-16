@@ -12,8 +12,8 @@ article {
     width: 60%;
     margin-left: 20%;
     margin-bottom: 5%;
-    padding-bottom: 5%;
 }
+
 article a{
     text-decoration: none;
     color: #4D4C4C;
@@ -47,5 +47,51 @@ article h5 {
 
 #newBlog #postBtn:hover {
     background-color: #C39BD3;
+    cursor: pointer;
+}
+
+.comment {
+    width: 600px;
+    text-align: center;
+    background-color: #DDCEB6;
+    margin: 15px;
+    margin-left: 20%;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+#addComment {
+    width: 600px;
+    text-align: center;
+    background-color: #DDCEB6;
+    margin: 15px;
+    margin-left: 20%;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+#comment {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    width: 500px;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #FDEBD0;
+    border-radius: 20px;
+}
+
+#commentBtn {
+    background-color: #BEB09C;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: inherit;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+#commentBtn:hover {
+    background-color: #9E9382;
     cursor: pointer;
 }

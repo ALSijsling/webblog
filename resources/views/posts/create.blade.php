@@ -14,12 +14,6 @@
         @endsection
 
         @section('content')
-            @if($errors->any()) 
-                @foreach($errors->all() as $error)
-                    {{ $error }}
-                @endforeach
-            @endif
-
             <form id="newBlog" method="POST" action="{{route('posts.store')}}">
                 @csrf
 

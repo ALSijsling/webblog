@@ -14,11 +14,31 @@
         @endsection
 
         @section('content')
-            <article id='post'>
+            <article id="post">
                 <h1>{{ $post->title }}</h1>
                 <h5>{{ $post->created_at->toDateString() }}</h5>
-                <div id='article'>{!! $post->article !!}</div>
+                <div id="article">{!! $post->article !!}</div>
+                
+                @foreach ($comments as $comment)
+                    <div class="comment">
+                        <h3>{{ $comment->user->name }}</h3>
+                        <p>{{ $comment->comment }}</p>
+                    </div>
+                @endforeach
+
+                <form id="addComment" method="POST" action="/posts/{{$post->id}}/comments">
+                @csrf
+
+                    <h3>Join the conversation</h3>
+
+                    <input type="hidden" name="user_id" value="2">
+
+                    <textarea id="comment" name="comment" rows="5"></textarea><br><br>
+
+                    <input id="commentBtn" type="submit" value="Post">
+                </form>
             </article>
+
         @endsection    
     </body>
 
