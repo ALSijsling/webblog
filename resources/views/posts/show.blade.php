@@ -33,7 +33,11 @@
 
                     <input type="hidden" name="user_id" value="2">
 
-                    <textarea id="comment" name="comment" rows="5"></textarea><br><br>
+                    <textarea id="comment" name="comment" rows="5" value="{{ old('comment') }}"></textarea>
+                        @error('title')
+                            <p class="error">{{ $message }}</p>
+                        @enderror
+                    <br><br>
 
                     <input id="commentBtn" type="submit" value="Post">
                 </form>

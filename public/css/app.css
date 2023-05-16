@@ -8,6 +8,11 @@ body {
     font-size: 18px;
 }
 
+.error {
+    color: red;
+    font-size: 12px;
+}
+
 article {
     width: 60%;
     margin-left: 20%;

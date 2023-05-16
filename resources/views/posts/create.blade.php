@@ -22,10 +22,18 @@
                 <input type="hidden" name="user_id" value="1">
                 
                 <label for="title">Title</label><br>
-                <input id="title" type="text" name="title" value=""><br><br>
+                <input id="title" type="text" name="title" value="{{ old('title') }}">
+                    @error('title')
+                        <p class="error">{{ $message }}</p>
+                    @enderror
+                <br><br>
                 
                 <label for="article">Text</label><br>
-                <textarea id="article" name="article"></textarea><br><br>
+                <textarea id="article" name="article" value="{{ old('article') }}"></textarea>
+                    @error('article')
+                        <p class="error">{{ $message }}</p>
+                    @enderror
+                <br><br>
 
                 <input id="postBtn" type="submit" value="Post Blog">
             </form>
