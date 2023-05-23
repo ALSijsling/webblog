@@ -8,3 +8,4 @@ Weblog
 -create new blog
 -added post page
 -added comments
+-added register and log in pages

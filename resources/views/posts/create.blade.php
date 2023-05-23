@@ -1,44 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-layout>
+    <form id="newBlog" method="POST" action="{{route('posts.store')}}">
+        @csrf
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        @extends('layouts.app')
-    </head>
+        <h1>New Blog</h1>
 
-    <body>
-        @section('navbar')
-            @parent
-        @endsection
-
-        @section('content')
-            <form id="newBlog" method="POST" action="{{route('posts.store')}}">
-                @csrf
-
-                <h1>New Blog</h1>
-
-                <input type="hidden" name="user_id" value="1">
+        <input type="hidden" name="user_id" value="1">
                 
-                <label for="title">Title</label><br>
-                <input id="title" type="text" name="title" value="{{ old('title') }}">
-                    @error('title')
-                        <p class="error">{{ $message }}</p>
-                    @enderror
-                <br><br>
+        <label for="title">Title</label><br>
+        <input id="title" type="text" name="title" value="{{ old('title') }}"><br><br>
                 
-                <label for="article">Text</label><br>
-                <textarea id="article" name="article" value="{{ old('article') }}"></textarea>
-                    @error('article')
-                        <p class="error">{{ $message }}</p>
-                    @enderror
-                <br><br>
+        <label for="article">Text</label><br>
+        <textarea id="article" name="article" value="{{ old('article') }}"></textarea><br><br>
 
-                <input id="postBtn" type="submit" value="Post Blog">
-            </form>
-        @endsection
-        
-    </body>
-
-</html>
+        <input class="postBtn" type="submit" value="Post Blog">
+    </form>
+    <x-error/>
+</x-layout>

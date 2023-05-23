@@ -15,6 +15,21 @@
     font-weight: bold;
 }
 
+#users button {
+    float: right;
+    background-color: #D2B4DE;
+    padding: 6px 10px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#users a {
+    float: right;
+}
+
 #navBar a:hover {
     background-color: #D2B4DE;
 }
@@ -23,7 +38,7 @@
     background-color: #C39BD3;
 }
 
-#navBar #searchBar, #navBar #logIn {
+#navBar #searchBar, #navBar #logIn, #navBar #register {
     float: right;
     margin-right: 10px;
 }

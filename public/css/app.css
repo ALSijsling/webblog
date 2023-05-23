@@ -42,7 +42,7 @@ article h5 {
     height: 500px;
 }
 
-#newBlog #postBtn {
+.postBtn {
     font-size: 18px;
     font-weight: bold;
     color: inherit;
@@ -50,7 +50,7 @@ article h5 {
     background-color: #E8DAEF;
 }
 
-#newBlog #postBtn:hover {
+.postBtn:hover {
     background-color: #C39BD3;
     cursor: pointer;
 }
@@ -86,17 +86,21 @@ article h5 {
     border-radius: 20px;
 }
 
-#commentBtn {
-    background-color: #BEB09C;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 18px;
-    color: inherit;
-    margin-bottom: 15px;
-    border-radius: 15px;
+#registerForm, #logInForm {
+    background-color: #DDCEB6;
+    width: 300px;
+    margin-left: 35%;
+    margin-top: 40px;
+    padding: 15px;
+    border-radius: 20px;
 }
 
-#commentBtn:hover {
-    background-color: #9E9382;
-    cursor: pointer;
+#flashMessage {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    background-color: #D2B4DE;
+    color: inherit;
+    padding: 8px;
+    border-radius: 20px;
 }
