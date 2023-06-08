@@ -2,7 +2,7 @@
     <div id="registerForm">
         <h2>Register</h2>
 
-        <form method="POST" action="/register">
+        <form method="POST" action="{{route('register.store')}}">
             @csrf
             <label for="name">Name</label><br>
             <input type="text" name="name" value="{{old('name')}}"><br><br>

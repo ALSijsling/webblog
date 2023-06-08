@@ -8,22 +8,22 @@ class SessionsController extends Controller
 {
     public function create()
     {
-        return view('login.create');
+        return view('sessions.create');
     }
 
     public function store(StoreSessionsRequest $request)
     {
         $attributes = $request->validated();
 
-        if(auth()->attempt($attributes)) {
-            session()->regenerate();
-            
-            return redirect('/posts')->with('success', 'Welcome Back!');
+        if(!auth()->attempt($attributes)) {
+            return back()
+            ->withInput()
+            ->withErrors(['email' => 'Your provided credentials could not be verified.']);            
         }
 
-        return back()
-            ->withInput()
-            ->withErrors(['email' => 'Your provided credentials could not be verified.']);
+        session()->regenerate();
+
+        return redirect('/posts')->with('success', 'Welcome Back!');
     }
 
     public function destroy()

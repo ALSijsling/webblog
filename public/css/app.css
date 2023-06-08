@@ -33,13 +33,13 @@ article h5 {
 }
 
 #newBlog #title {
-    width: 750px;
+    width: 500px;
 }
 
 #newBlog #article {
     overflow: scroll;
-    width: 750px;
-    height: 500px;
+    width: 500px;
+    height: 300px;
 }
 
 .postBtn {

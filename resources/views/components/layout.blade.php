@@ -10,6 +10,7 @@
         
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link rel="stylesheet" href="{{asset('css/nav.css')}}">
+        <link rel="stylesheet" href="{{asset('css/admin.css')}}">
         <!-- icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -18,8 +19,7 @@
 
     <body>
         <div id="navBar">
-            <a href="{{route('posts.index')}}">Home</a>
-            <a href="{{route('posts.create')}}">New Blog</a>
+            <a href="{{route('home')}}">Home</a>
             <div id="dropdown">
                 <button id="dropbtn">Categories<i class="fa fa-caret-down"></i></button>
                 <div id="dropdown-content">
@@ -34,13 +34,33 @@
             </form>
             <div id="users">
                 @auth
-                    <a href="#">{{auth()->user()->name}} <i class='fa fa-user'></i></a>
-                    <form method="POST" action="/logout">
-                        @csrf
-                        <button type="submit">Log Out</button>
+                    <x-dropdown>
+                        <x-slot name="trigger">
+                            <button>
+                                {{auth()->user()->name}} <i class='fa fa-user'></i>
+                            </button>
+                        </x-slot>
+
+                        <x-dropdown-item 
+                            href="{{route('posts.index')}}"
+                        >Dashboard
+                        </x-dropdown-item>
+
+                        <x-dropdown-item
+                            href="#"
+                            x-data="{}"
+                            @click.prevent="document.querySelector('#logout-form').submit()"
+                        >Log Out
+                        </x-dropdown-item>
+
+                        <form id="logout-form" method="POST" action="{{route('sessions.destroy')}}" class="hidden">
+                            @csrf
+                        </form>
+                    </x-dropdown>
+                    
                 @else
-                    <a href="/register">Register</a>
-                    <a href="/login">Log In</a>
+                    <a href="{{route('register.create')}}">Register</a>
+                    <a href="{{route('login.create')}}">Log In</a>
                 @endauth
             </div>
         </div>

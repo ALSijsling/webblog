@@ -11,12 +11,10 @@
             </div>
         @endforeach
 
-        <form id="addComment" method="POST" action="/posts/{{$post}}/comments">
+        <form id="addComment" method="POST" action="{{route('posts.comments.store', ['post' => $post])}}">
         @csrf
 
             <h3>Join the conversation</h3>
-
-            <input type="hidden" name="user_id" value="#">
 
             <textarea id="comment" name="comment" rows="5" value="{{ old('comment') }}"></textarea><br><br>
 

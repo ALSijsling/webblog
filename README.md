@@ -9,3 +9,4 @@ Weblog
 -added post page
 -added comments
 -added register and log in pages
+-added admin section

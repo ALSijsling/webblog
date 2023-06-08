@@ -22,7 +22,6 @@ class StoreCommentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required',
             'comment' => 'required|min:5',
         ];
     }

@@ -1,0 +1,48 @@
+#heading {
+    margin-left: 15%;
+    padding: 5px;
+    padding-bottom: 15px;
+    width: 70%;
+    border-bottom: 1px grey solid;
+}
+
+#flex-admin {
+    display: flex;
+}
+
+#flex-admin aside {
+    margin-left: 15%;
+    width: 300px;
+}
+
+#flex-admin main {
+    margin-left: 20px;
+    padding: 15px;
+    width: 1000px;
+    text-align: left;
+}
+
+#flex-admin a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#flex-admin ul {
+    list-style-type: none;
+}
+
+#flex-admin li {
+    margin-bottom: 20px;
+}
+
+.flex-post-list {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    border-bottom: 1px lightgray inset;
+    padding-bottom: 8px;
+}
+
+.title {
+    width: 400px;
+}

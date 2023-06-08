@@ -2,10 +2,10 @@
     <div id="logInForm">
         <h2>Log In</h2>
 
-        <form method="POST" action="/login">
+        <form method="POST" action="{{route('login.store')}}">
             @csrf
 
-            <label for="email">Email</labe><br>
+            <label for="email">Email</label><br>
             <input type="email" name="email" value="{{old('email')}}"><br><br>
 
             <label for="password">Password</label><br>
