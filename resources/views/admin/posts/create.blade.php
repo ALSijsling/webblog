@@ -1,6 +1,6 @@
 <x-layout>
     <x-admin heading="New Blog">
-        <form id="newBlog" method="POST" action="{{route('posts.store')}}">
+        <form id="Blog" method="POST" action="{{route('posts.store')}}">
             @csrf
                     
             <label for="title">Title</label><br>

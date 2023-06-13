@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
+use Illuminate\Auth\Events\Validated;
 
 class AdminPostController extends Controller
 {
@@ -12,7 +14,7 @@ class AdminPostController extends Controller
         $user= request()->user();
 
         return view("admin.posts.index", [
-            'posts' => Post::all(),
+            'posts' => Post::orderByDesc('updated_at')->get(),
             'user' => $user,
         ]);
     }
@@ -33,23 +35,26 @@ class AdminPostController extends Controller
         return redirect('/posts');
     }
 
-    public function show()
+    public function edit(Post $post)
     {
-        //
+        return view('admin.posts.edit',[
+            'post' => $post
+        ]);
     }
 
-    public function edit()
+    public function update(UpdatePostRequest $request)
     {
-        //
+        $attributes = $request->validated();
+
+        Post::updated($attributes);
+
+        return redirect('/admin/posts');
     }
 
-    public function update()
+    public function destroy(Post $post)
     {
-        //
-    }
+        $post->delete();
 
-    public function destroy()
-    {
-        //
+        return redirect('/admin/posts');
     }
 }

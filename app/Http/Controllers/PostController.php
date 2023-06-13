@@ -3,17 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Http\Requests\StorePostRequest;
-use App\Http\Requests\UpdatePostRequest;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderByDesc('created_at')->get();
-
-        return view('posts.index')
-                    ->with('posts', $posts);
+        return view('posts.index', [
+            'posts' => Post::orderByDesc('created_at')->get()
+        ]);
     }
 
     public function show(Post $post)
@@ -21,7 +18,8 @@ class PostController extends Controller
         $comments = $post->comments()->get();
         
         return view('posts.show', [
-            'post' => $post
-        ])->with('comments', $comments);
+            'post' => $post,
+            'comments' => $comments
+        ]);
     }
 }

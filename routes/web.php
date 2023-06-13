@@ -13,7 +13,7 @@ Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show')
 
 //Authenticated comments and posts
 Route::resource('posts.comments', CommentController::class)->middleware('auth');
-Route::resource('admin/posts', AdminPostController::class)->middleware('admin');
+Route::resource('admin/posts', AdminPostController::class)->except('show')->middleware('admin');
 
 //Create and logging users
 Route::resource('register', RegisterController::class)->only(['create', 'store'])->middleware('guest');

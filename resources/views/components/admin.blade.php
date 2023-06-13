@@ -9,7 +9,7 @@
         <aside>
             <ul>
                 <li>
-                    <a href="{{route('posts.index')}}">Posts</a>
+                    <a href="{{route('posts.index')}}">All Posts</a>
                 </li>
                 <li>
                     <a href="{{route('posts.create')}}">New Blog</a>

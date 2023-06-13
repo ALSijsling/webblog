@@ -41,10 +41,12 @@
                             </button>
                         </x-slot>
 
-                        <x-dropdown-item 
-                            href="{{route('posts.index')}}"
-                        >Dashboard
-                        </x-dropdown-item>
+                        @can('admin')
+                            <x-dropdown-item 
+                                href="{{route('posts.index')}}"
+                            >Dashboard
+                            </x-dropdown-item>
+                        @endcan
 
                         <x-dropdown-item
                             href="#"
