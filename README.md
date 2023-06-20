@@ -11,3 +11,4 @@ Weblog
 -added register and log in pages
 -added admin section
 -added edit and delete posts
+-added categories

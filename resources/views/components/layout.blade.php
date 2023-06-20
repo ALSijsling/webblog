@@ -20,14 +20,7 @@
     <body>
         <div id="navBar">
             <a href="{{route('home')}}">Home</a>
-            <div id="dropdown">
-                <button id="dropbtn">Categories<i class="fa fa-caret-down"></i></button>
-                <div id="dropdown-content">
-                    <a href="#">Cat 1</a>
-                    <a href="#">Cat 2</a>
-                    <a href="#">Cat 3</a>
-                </div>
-            </div>
+            <x-category-dropdown/>
             <form id="searchBar">
                 <input type="text" placeholder="Search..">
                 <button type="submit"><i class="fa fa-fw fa-search"></i></button>

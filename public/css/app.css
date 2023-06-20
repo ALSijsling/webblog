@@ -30,6 +30,16 @@ article h5 {
 
 .post {
     border-bottom: 1px dashed #4D4C4C;
+    padding-bottom: 15px;
+}
+
+.catLink {
+    color: #8641CF;
+    font-size: 12px;
+    border: 2px solid #8641CF;
+    border-radius: 12px;
+    padding: 3px 18px;
+    margin-right: 5px;
 }
 
 #Blog #title {

@@ -6,14 +6,17 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\CategoryController;
 
-//Home and single post
+//Public posts and categories
 Route::get('/posts', [PostController::class, 'index'])->name('home');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 
-//Authenticated comments and posts
-Route::resource('posts.comments', CommentController::class)->middleware('auth');
+//Authenticated posts, comments and categories
 Route::resource('admin/posts', AdminPostController::class)->except('show')->middleware('admin');
+Route::resource('posts.comments', CommentController::class)->middleware('auth');
+Route::resource('admin/categories', CategoryController::class)->except(['show', 'edit', 'update'])->middleware('admin');
 
 //Create and logging users
 Route::resource('register', RegisterController::class)->only(['create', 'store'])->middleware('guest');

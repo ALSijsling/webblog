@@ -2,6 +2,11 @@
     <article id="post">
         <h1>{{ $post->title }}</h1>
         <h5>{{ $post->created_at->toDateString() }}</h5>
+                
+        @foreach ($categories as $category)
+            <a class="catLink" href="{{route('categories.show', ['category' => $category])}}">{{$category->name}}</a>
+        @endforeach
+        
         <div id="article">{!! $post->article !!}</div>
                 
         @foreach ($comments as $comment)

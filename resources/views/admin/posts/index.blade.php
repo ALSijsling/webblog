@@ -13,7 +13,7 @@
                     </form>
                 </div>
                 <div id="post-delete">
-                    <form id="post-delete" action="{{route('posts.destroy', ['post' => $post])}}" method="POST">
+                    <form action="{{route('posts.destroy', ['post' => $post])}}" method="POST">
                         <input type="submit" value="Delete">
                         @method('DELETE')
                         @csrf

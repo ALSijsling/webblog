@@ -13,6 +13,7 @@
 #flex-admin aside {
     margin-left: 15%;
     width: 300px;
+    font-weight: bold;
 }
 
 #flex-admin main {
@@ -35,7 +36,7 @@
     margin-bottom: 20px;
 }
 
-.flex-post-list {
+.flex-post-list, .flex-category-list {
     display: flex;
     justify-content: space-between;
     width: 600px;
@@ -43,6 +44,6 @@
     padding-bottom: 8px;
 }
 
-.title {
+.title, .name {
     width: 400px;
 }
