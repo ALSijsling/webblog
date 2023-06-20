@@ -21,8 +21,8 @@
         <div id="navBar">
             <a href="{{route('home')}}">Home</a>
             <x-category-dropdown/>
-            <form id="searchBar">
-                <input type="text" placeholder="Search..">
+            <form id="searchBar" method="GET" action="#">
+                <input type="text" name="search" placeholder="Search..">
                 <button type="submit"><i class="fa fa-fw fa-search"></i></button>
             </form>
             <div id="users">

@@ -12,3 +12,4 @@ Weblog
 -added admin section
 -added edit and delete posts
 -added categories
+-added the search function
