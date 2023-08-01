@@ -16,7 +16,7 @@ body {
 article {
     width: 60%;
     margin-left: 20%;
-    margin-bottom: 5%;
+    margin-bottom: 20px;
 }
 
 article a{
@@ -26,6 +26,30 @@ article a{
 
 article h5 {
     color: #7A7979;
+}
+
+.post-heading {
+    display: flex;
+    justify-content: center;
+}
+
+.post-image img {
+    width: 150px;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 12px;
+}
+
+.post-meta {
+    display: block;
+    margin-left: 10px;
+}
+
+#post img {
+    width: 750px;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 25px;
 }
 
 .post {
@@ -42,14 +66,19 @@ article h5 {
     margin-right: 5px;
 }
 
-#Blog #title {
+.blog #title {
     width: 500px;
 }
 
-#Blog #article {
+.blog #article {
     overflow: scroll;
     width: 500px;
     height: 300px;
+}
+
+.blog img {
+    width: 100px;
+    border-radius: 12px;
 }
 
 .postBtn {

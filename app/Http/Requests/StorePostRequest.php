@@ -24,6 +24,8 @@ class StorePostRequest extends FormRequest
         return [
             'title' => 'required|string|min:5',
             'article' => 'required|min:50',
+            'image' => 'required|image',
+            'category' => 'required',
         ];
     }
 }

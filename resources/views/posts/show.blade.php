@@ -1,5 +1,6 @@
 <x-layout>
     <article id="post">
+        <img src="{{asset('storage/' . $post->image)}}" alt="">
         <h1>{{ $post->title }}</h1>
         <h5>{{ $post->created_at->toDateString() }}</h5>
                 

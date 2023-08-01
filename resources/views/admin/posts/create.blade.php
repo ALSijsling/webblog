@@ -1,6 +1,6 @@
 <x-layout>
     <x-admin heading="New Blog">
-        <form id="Blog" method="POST" action="{{route('posts.store')}}">
+        <form class="blog" method="POST" action="{{route('posts.store')}}" enctype="multipart/form-data">
             @csrf
                     
             <label for="title">Title</label><br>
@@ -9,6 +9,9 @@
             <label for="article">Text</label><br>
             <textarea id="article" name="article">{{ old('article') }}</textarea><br><br>
 
+            <label for="image">Image</label>
+            <input id="image" type="file" name="image"><br><br>
+
             <label for="categories">Select Categories</label><br>
             @foreach ($categories as $category)
                 <input id="category" type="checkbox" name="category[]" value="{{$category->id}}"
@@ -16,6 +19,7 @@
                 <label for="categories">{{$category->name}}</label><br>
             @endforeach
             <br>
+
             <input class="postBtn" type="submit" value="Post Blog">
         </form>
         <x-error/>

@@ -13,3 +13,4 @@ Weblog
 -added edit and delete posts
 -added categories
 -added the search function
+-added newsletter

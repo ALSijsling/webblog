@@ -32,6 +32,8 @@ class AdminPostController extends Controller
         $attributes = $request->validated();
 
         $attributes['user_id'] = auth()->id();
+        $attributes['image'] = request()->file('image')->store('images');
+        unset($attributes['category']);
 
         $post = Post::create($attributes);
         $post->categories()->attach($categories);
@@ -54,6 +56,12 @@ class AdminPostController extends Controller
     {
         $categories = $request->category;
         $attributes = $request->validated();
+
+        unset($attributes['category']);
+
+        if (isset($attributes['image'])) {
+            $attributes['image'] = request()->file('image')->store('images');
+        }
 
         Post::updated($attributes);
         $post->categories()->sync($categories);

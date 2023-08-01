@@ -1,6 +1,6 @@
 <x-layout>
     <x-admin heading="Edit {{$post->title}}">
-        <form id="Blog" method="POST" action="{{route('posts.update', ['post' => $post])}}">
+        <form class="blog" method="POST" action="{{route('posts.update', ['post' => $post])}}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
                     
@@ -10,6 +10,10 @@
             <label for="article">Text</label><br>
             <textarea id="article" name="article">{{$post->article}}</textarea><br><br>
 
+            <label for="image">Image</label>
+            <input id="image" type="file" name="image"><br><br>
+            <img src="{{asset('storage/' . $post->image)}}" alt=""><br><br>
+            
             <label for="categories">Select Categories</label><br>
             @foreach ($categories as $category)
                 <input id="category" type="checkbox" name="category[]" value="{{$category->id}}"

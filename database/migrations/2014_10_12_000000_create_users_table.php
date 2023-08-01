@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('email')->unique();
             $table->boolean('is_premium')->default(0);
+            $table->boolean('newsletter')->default(0);
             $table->timestamps();
         });
     }

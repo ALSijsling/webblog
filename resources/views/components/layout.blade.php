@@ -22,36 +22,27 @@
             <a href="{{route('home')}}">Home</a>
             <x-category-dropdown/>
             <form id="searchBar" method="GET" action="#">
-                <input type="text" name="search" placeholder="Search..">
+                <input type="text" name="search" placeholder="Search.." value="{{request('search')}}">
                 <button type="submit"><i class="fa fa-fw fa-search"></i></button>
             </form>
             <div id="users">
                 @auth
-                    <x-dropdown>
-                        <x-slot name="trigger">
-                            <button>
-                                {{auth()->user()->name}} <i class='fa fa-user'></i>
-                            </button>
-                        </x-slot>
+                    <div id="user-dropdown">
+                        <button class="dropbtn">
+                            {{auth()->user()->name}} <i class='fa fa-user'></i>
+                        </button>
 
+                        <div id="user-item">
                         @can('admin')
-                            <x-dropdown-item 
-                                href="{{route('posts.index')}}"
-                            >Dashboard
-                            </x-dropdown-item>
+                            <a href="{{route('posts.index')}}">Dashboard</a>
                         @endcan
-
-                        <x-dropdown-item
-                            href="#"
-                            x-data="{}"
-                            @click.prevent="document.querySelector('#logout-form').submit()"
-                        >Log Out
-                        </x-dropdown-item>
-
+                            <a href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Log Out</a>
+                        </div>
+                        
                         <form id="logout-form" method="POST" action="{{route('sessions.destroy')}}" class="hidden">
                             @csrf
                         </form>
-                    </x-dropdown>
+                    </div>
                     
                 @else
                     <a href="{{route('register.create')}}">Register</a>
@@ -65,6 +56,17 @@
         </main>
 
         <x-flash/>
+
+        <footer>
+            @auth
+                @if(!auth()->user()->newsletter == 1)
+                <form id="newsletter" method="POST" action="{{route('newsletter.store')}}">
+                    @csrf
+                    <input id="newsletterBtn" type="submit" value="Subscribe to the Newsletter">
+                </form>
+                @endif
+            @endauth
+        </footer>
     </body>
 
 </html>
