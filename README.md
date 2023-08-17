@@ -14,3 +14,4 @@ Weblog
 -added categories
 -added the search function
 -added newsletter
+-added premium content

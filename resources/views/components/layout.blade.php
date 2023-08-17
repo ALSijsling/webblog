@@ -57,16 +57,16 @@
 
         <x-flash/>
 
-        <footer>
-            @auth
-                @if(!auth()->user()->newsletter == 1)
-                <form id="newsletter" method="POST" action="{{route('newsletter.store')}}">
-                    @csrf
-                    <input id="newsletterBtn" type="submit" value="Subscribe to the Newsletter">
-                </form>
-                @endif
-            @endauth
-        </footer>
+        @auth
+            @if(!auth()->user()->newsletter == 1)
+                <footer>
+                    <form id="newsletter" method="POST" action="{{route('newsletter.store')}}">
+                        @csrf
+                        <input id="newsletterBtn" type="submit" value="Subscribe to the Newsletter">
+                    </form>
+                </footer>
+            @endif
+        @endauth
     </body>
 
 </html>

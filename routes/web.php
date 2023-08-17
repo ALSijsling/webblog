@@ -8,6 +8,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\PremiumController;
 
 //Public posts and categories
 Route::get('/posts', [PostController::class, 'index'])->name('home');
@@ -26,5 +27,8 @@ Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth'
 
 //Newsletter
 Route::post('newsletter', [NewsletterController::class, 'store'])->middleware('auth')->name('newsletter.store');
+
+//Premium
+Route::resource('premium', PremiumController::class)->only(['create', 'store'])->middleware('auth');
 
 Route::redirect('/', '/posts');

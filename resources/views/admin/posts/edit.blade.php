@@ -13,6 +13,10 @@
             <label for="image">Image</label>
             <input id="image" type="file" name="image"><br><br>
             <img src="{{asset('storage/' . $post->image)}}" alt=""><br><br>
+
+            <label for="is_premium">Premium</label>
+            <input id="is_premium" type="checkbox" name="is_premium" value=1
+                {{$post->is_premium == '1' ? 'checked' : ''}}><br><br>
             
             <label for="categories">Select Categories</label><br>
             @foreach ($categories as $category)

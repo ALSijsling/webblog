@@ -12,6 +12,10 @@
             <label for="image">Image</label>
             <input id="image" type="file" name="image"><br><br>
 
+            <label for="is_premium">Premium</label>
+            <input id="premium" type="checkbox" name="is_premium" value=1
+                {{old('is_premium') == '1' ? 'checked' : ''}}><br><br>
+
             <label for="categories">Select Categories</label><br>
             @foreach ($categories as $category)
                 <input id="category" type="checkbox" name="category[]" value="{{$category->id}}"

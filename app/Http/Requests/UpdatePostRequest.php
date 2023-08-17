@@ -26,6 +26,7 @@ class UpdatePostRequest extends FormRequest
             'article' => 'required|min:50',
             'image' => 'image',
             'category' => 'required',
+            'is_premium' => 'boolean',
         ];
     }
 }

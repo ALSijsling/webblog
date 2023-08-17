@@ -26,6 +26,7 @@ class StorePostRequest extends FormRequest
             'article' => 'required|min:50',
             'image' => 'required|image',
             'category' => 'required',
+            'is_premium' => 'boolean',
         ];
     }
 }

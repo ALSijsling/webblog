@@ -8,7 +8,11 @@
                     </div>
                     <div class="post-meta">
                         <a href="{{route('posts.show', ['post' => $post])}}"><h1>{{ $post->title }}</h1></a>
-                        <h5>{{ $post->created_at->toDateString() }}</h5>
+                        <h5>{{ $post->created_at->toDateString() }}
+                            @if($post->is_premium == 1)
+                                <i class="fa fa-star" style="font-size:18px;color:gold">Premium</i>
+                            @endif
+                        </h5>
                     </div>
                 </div>
 
