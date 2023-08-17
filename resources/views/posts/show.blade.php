@@ -39,6 +39,7 @@
             </div>
         @endforeach
 
+        <!-- TODO: vraag: moet het niet $post->id zijn, ipv $post? -->
         <form id="addComment" method="POST" action="{{route('posts.comments.store', ['post' => $post])}}">
         @csrf
 

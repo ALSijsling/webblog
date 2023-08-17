@@ -12,6 +12,7 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        // TODO: als je zin hebt is het een leuke extra om wat dummy data te 
+        // seeden (niet verplicht)
     }
 }
