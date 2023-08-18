@@ -28,9 +28,7 @@ class AdminPostController extends Controller
 
     public function store(StorePostRequest $request)
     {
-        // TODO: noem de category uit de request categories ipv category, omdat het 
-        // meerdere kunnen zijn zodat je aan de naam kunt herleiden dat het om een array gaat
-        $categories = $request->category;
+        $categories = $request->categories;
         $attributes = $request->validated();
 
         $attributes['user_id'] = auth()->id();
@@ -45,21 +43,15 @@ class AdminPostController extends Controller
 
     public function edit(Post $post)
     {
-        // TODO: onderstaande kun je verkort schrijven als: $post->categories
-        $postCategories = $post->categories()->get();
-
-        // TODO: postCategories kun je ook via de relatie uit de post template variable in 
-        // de template opvragen ipv hier in de controller
         return view('admin.posts.edit',[
             'post' => $post,
             'categories' => Category::orderBy('name')->get(),
-            'postCategories' => $postCategories
         ]);
     }
 
     public function update(UpdatePostRequest $request, Post $post)
     {
-        $categories = $request->category;
+        $categories = $request->categories;
         $attributes = $request->validated();
 
         unset($attributes['category']);
@@ -68,7 +60,6 @@ class AdminPostController extends Controller
             $attributes['image'] = request()->file('image')->store('images');
         }
 
-        // TODO: typefout? updated ipv update?
         Post::updated($attributes);
         $post->categories()->sync($categories);
 

@@ -18,8 +18,8 @@
 
             <label for="categories">Select Categories</label><br>
             @foreach ($categories as $category)
-                <input id="category" type="checkbox" name="category[]" value="{{$category->id}}"
-                    {{(is_array(old('category')) and in_array($category->id, old('category'))) ? 'checked' : ''}}>
+                <input id="categories" type="checkbox" name="categories[]" value="{{$category->id}}"
+                    {{(is_array(old('categories')) and in_array($category->id, old('categories'))) ? 'checked' : ''}}>
                 <label for="categories">{{$category->name}}</label><br>
             @endforeach
             <br>
